@@ -5,13 +5,17 @@
 
 
 sap.ui.define([
-	"sap/ui/core/mvc/XMLView"
-], (XMLView) => {
+	"sap/ui/core/ComponentContainer"
+], (ComponentContainer) => {
 	"use strict";
 
-	XMLView.create({
-		viewName: "ui5.walkthrough.view.App"
-	}).then((oView) => oView.placeAt("content"));//a javascript promise i.e once we have view name then block gets executed
+	new ComponentContainer({
+		name: "ui5.walkthrough",
+		settings : {
+			id : "walkthrough"
+		},
+		async: true
+	}).placeAt("content");
 });
 
 
