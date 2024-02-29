@@ -1,4 +1,4 @@
-//The "Hello World" text is now displayed by a SAPUI5 control
+//The "Hello World" text is now displayed by a SAPUI5 control same as previous but using views
 //Instead of using native JavaScript to display a dialog we want to use a simple SAPUI5 control. Controls are used to define appearance and behavior of parts of the screen.
 //package.json->npm init
 //ui5.yaml->ui5 init
