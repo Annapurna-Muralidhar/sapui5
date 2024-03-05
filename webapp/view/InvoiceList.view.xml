@@ -23,7 +23,7 @@
                   search=".onFilterInvoices"/>
             </Toolbar>
          </headerToolbar>
-        <items>
+         <items>
             <ObjectListItem
                 title="{invoice>Quantity} x {invoice>ProductName}"
                 number="{
@@ -37,7 +37,9 @@
                     }
                 }"
                 numberUnit="{view>/currency}"
-                numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }">
+                numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }"
+                type="Navigation"
+                press=".onPress" >
                 <firstStatus>
                     <ObjectStatus
                         text="{
