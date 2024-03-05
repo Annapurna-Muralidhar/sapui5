@@ -39,9 +39,12 @@ If the query is not empty, we add a new filter object to the still empty array o
 The list is accessed with the ID that we have specified in the view, because the control is automatically prefixed by the view ID, we need to ask the view for the control with the helper function byId. On the list control we access the binding of the aggregation items to filter it with our newly constructed filter object. This will automatically filter the list by our search string so that only the matching items are shown when the search is triggered. The filter operator FilterOperator.Contains is not case-sensitive.*/
 		},
 
-		onPress() {
+		onPress(oEvent) {
+			const oItem = oEvent.getSource();
 			const oRouter = this.getOwnerComponent().getRouter();
-			oRouter.navTo("detail");
+			oRouter.navTo("detail", {
+				invoicePath: window.encodeURIComponent(oItem.getBindingContext("invoice").getPath().substr(1))
+			});
 		}
 	});
 });
